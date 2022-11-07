@@ -1,0 +1,65 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans Pro";
+}
+
+h2 {
+    font-size: 3.55rem;
+    color: $orange-dark;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: $orange-dark;
+    font-weight: 300;
+    padding: 1.3rem 0rem 1.3rem 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.super-headline {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $gray-dark;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+}
+
+.button {
+    border: 1px solid $orange-light;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    width: fit-content;
+    padding: 0.7rem 1.6rem 0.7rem 1.6rem;
+    font-size: 1.1rem;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.24px;
+    margin: 1.25rem 0px 2rem 0rem;
+}
+
+@include breakpoint(0, $mobile) {
+    .super-headline {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.65rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+        padding: 0.65rem 0rem 0.65rem 1.25rem;
+    }
+}

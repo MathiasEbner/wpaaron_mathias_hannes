@@ -1,0 +1,329 @@
+#workshops {
+    padding: 100px 2rem 100px 2rem;
+    .workshopsTextContainer {
+        margin-bottom: 3rem;
+    }
+    .levelContainer {
+        display: grid;
+        grid-template-columns: 1.6fr 0.4fr;
+        //grid-template-rows: 1fr 1fr 1fr;
+        gap: 2rem;
+        grid-template-areas:
+            "level3 apply"
+            "level2 register"
+            "level1 register";
+
+        .numberContainer {
+            grid-area: number;
+            background-color: $white;
+            display: flex;
+            align-items: flex-start;
+            p {
+                color: $gray-dark;
+                font-weight: 600;
+                font-size: 16rem;
+                line-height: 9.5rem;
+                transform: translateX(20px);
+            }
+        }
+        .imageContainer {
+            grid-area: _image;
+            justify-self: center;
+            place-self: center;
+            .imgCircle {
+                background-color: $gray-middle;
+                border-radius: 50%;
+                padding: 1.8rem;
+                img {
+                    width: 140px;
+                }
+            }
+        }
+        .textContainer {
+            grid-area: _text;
+            padding: 1.5rem;
+            h3 {
+                padding: 0.5rem 0rem 0.75rem 0rem;
+            }
+            p {
+                color: $white;
+            }
+            .button {
+                margin-top: 3rem;
+                color: $white;
+            }
+        }
+        .quoteContainer {
+            grid-area: quote;
+            justify-self: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            padding: 2.5rem;
+            img {
+                width: 120px;
+                position: relative;
+                bottom: -130px;
+                right: -58px;
+            }
+            blockquote {
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                font-weight: 300;
+                color: $white;
+                position: relative;
+                top: -90px;
+            }
+        }
+
+        #level3 {
+            grid-area: level3;
+            display: grid;
+            background-color: $gray-dark;
+            grid-template-columns: 0.4fr 1.8fr 0.9fr 0.9fr;
+            grid-template-areas:
+                "number _text _image quote"
+                "number _text _image quote"
+                "number _text _image quote";
+        }
+        #applyWorkshop {
+            grid-area: apply;
+            background-color: $white-dark;
+            color: $gray-apply;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 2.5rem;
+                text-align: left;
+                line-height: 3rem;
+            }
+        }
+        #level2 {
+            grid-area: level2;
+            display: grid;
+            background-color: $gray-dark;
+            grid-template-columns: 0.4fr 0.9fr 0.9fr 1.8fr;
+            grid-template-areas:
+                "number quote _image _text"
+                "number quote _image _text"
+                "number quote _image _text";
+            .numberContainer {
+                align-items: center;
+            }
+        }
+        #level1 {
+            grid-area: level1;
+            display: grid;
+            background-color: $gray-dark;
+            grid-template-columns: 0.4fr 0.9fr 1.8fr 0.9fr;
+            gap: 0px 0px;
+            grid-template-areas:
+                "number _image _text quote"
+                "number _image _text quote"
+                "number _image _text quote";
+            .numberContainer {
+                align-items: flex-end;
+                p {
+                    line-height: 11.4rem;
+                }
+            }
+        }
+        #registerContainer1 {
+            grid-area: register;
+            display: none;
+        }
+        #registerContainer2 {
+            grid-area: register;
+            padding: 1rem;
+            background-color: $white-dark;
+            color: $gray-apply;
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+        }
+    }
+}
+
+@include breakpoint(0, $mobile) {
+    #workshops {
+        padding: 2.5rem 0rem 2.5rem 0rem;
+        .workshopsTextContainer {
+            margin-bottom: 6rem;
+            padding-left: 2rem;
+        }
+        .levelContainer {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0rem;
+            row-gap: 7rem;
+            grid-template-areas:
+                "level3 apply"
+                "level2 register1"
+                "level1 register2";
+
+            .numberContainer {
+                grid-area: _image;
+                background-color: $gray-light;
+                width: 40px;
+                height: 40px;
+                padding: 0px;
+                text-align: center;
+                border-radius: 50%;
+                position: relative;
+                left: 60%;
+                top: -73px;
+                align-items: center;
+                p {
+                    color: $orange-dark;
+                    font-weight: 600;
+                    font-size: 1.75rem;
+                    line-height: 2rem;
+                    position: relative;
+                    right: 6px;
+                }
+            }
+            .imageContainer {
+                grid-area: _image;
+                justify-self: center;
+                place-self: center;
+                position: relative;
+                bottom: 60px;
+                .imgCircle {
+                    background-color: $gray-img;
+                    padding: 1.2rem;
+                    img {
+                        width: 75px;
+                    }
+                }
+            }
+            .textContainer {
+                grid-area: _text;
+                padding: 0rem;
+                h3 {
+                    padding: 0.5rem 0rem 0.75rem 0rem;
+                }
+                p {
+                    color: $white;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+                .button {
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                    color: $white;
+                }
+            }
+            .quoteContainer {
+                grid-area: quote;
+                justify-self: center;
+                align-items: center;
+
+                padding: 0rem;
+                img {
+                    width: 70px;
+                    position: relative;
+                    bottom: 0px;
+                    right: 0px;
+                }
+                blockquote {
+                    position: relative;
+                    top: 0px;
+                    margin-top: 5px;
+                    text-align: center;
+                    font-size: 1.4rem;
+                }
+            }
+            #applyWorkshop {
+                grid-area: apply;
+                padding: 1rem 0rem 0rem 0.2rem;
+                display: block;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                p {
+                    font-size: 1rem;
+                    text-align: left;
+                    line-height: 1.5rem;
+                }
+            }
+            .level {
+                padding-left: 20px;
+                padding-right: 20px;
+                //  margin-bottom: 124px;
+                padding-bottom: 30px;
+            }
+
+            #level3 {
+                grid-area: level3;
+                display: grid;
+                background-color: $gray-dark;
+                grid-template-columns: 1fr;
+                // grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "number"
+                    "_image"
+                    "_text"
+                    "quote";
+            }
+            #level2 {
+                grid-area: level2;
+                display: grid;
+                background-color: $gray-dark;
+                grid-template-columns: 1fr;
+                // grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "number"
+                    "_image"
+                    "_text"
+                    "quote";
+            }
+            #level1 {
+                grid-area: level1;
+                display: grid;
+                background-color: $gray-dark;
+                grid-template-columns: 1fr;
+                // grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "number"
+                    "_image"
+                    "_text"
+                    "quote";
+                .numberContainer {
+                    align-items: center;
+                    p {
+                        font-size: 1.75rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+            #registerContainer1 {
+                grid-area: register1;
+                padding: 1rem 0rem 0rem 0.2rem;
+                display: block;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                p {
+                    font-size: 1rem;
+                    text-align: left;
+                    line-height: 1.5rem;
+                }
+            }
+            #registerContainer2 {
+                grid-area: register2;
+                padding: 1rem 0rem 0rem 0.2rem;
+                display: block;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                p {
+                    font-size: 1rem;
+                    text-align: left;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+    }
+}
