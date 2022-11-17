@@ -32,10 +32,10 @@ host('vm-ultramarine.multimediatechnology.at')
 // Composer
 set('composer_action', false);
 
-task('deploy', [
-    'deploy:prepare',
-    'deploy:publish'
-]);
+// task('deploy', [
+//     'deploy:prepare',
+//     'deploy:publish'
+// ]);
 
 // Tasks
 desc('Deploy your project');
