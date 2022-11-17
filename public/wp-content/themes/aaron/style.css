@@ -1,0 +1,755 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ *    v2.0 | 20110126
+ *       License: none (public domain)
+ *       */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* source-sans-pro-200 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./fonts/source-sans-pro-v21-latin-200.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-200.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-200.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-200.woff") format("woff"), url("./fonts/source-sans-pro-v21-latin-200.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-200.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+/* source-sans-pro-300 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/source-sans-pro-v21-latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-300.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-300.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-300.woff") format("woff"), url("./fonts/source-sans-pro-v21-latin-300.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-300.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+/* source-sans-pro-regular - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/source-sans-pro-v21-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-regular.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-regular.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-regular.woff") format("woff"), url("./fonts/source-sans-pro-v21-latin-regular.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+/* source-sans-pro-600 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/source-sans-pro-v21-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-600.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-600.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-600.woff") format("woff"), url("./fonts/source-sans-pro-v21-latin-600.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-600.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+/* source-sans-pro-700 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/source-sans-pro-v21-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-700.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-700.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-700.woff") format("woff"), url("./fonts/fonts/source-sans-pro-v21-latin-700.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-700.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+/* source-sans-pro-900 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./fonts/source-sans-pro-v21-latin-900.eot"); /* IE9 Compat Modes */
+  src: local(""), url("./fonts/source-sans-pro-v21-latin-900.eot?#iefix") format("embedded-opentype"), url("./fonts/source-sans-pro-v21-latin-900.woff2") format("woff2"), url("./fonts/source-sans-pro-v21-latin-900.woff") format("woff"), url("./fonts/source-sans-pro-v21-latin-900.ttf") format("truetype"), url("./fonts/source-sans-pro-v21-latin-900.svg#SourceSansPro") format("svg"); /* Legacy iOS */
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro";
+}
+
+h2 {
+  font-size: 3.55rem;
+  color: hsl(26deg, 62%, 56.7%);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  color: hsl(26deg, 62%, 56.7%);
+  font-weight: 300;
+  padding: 1.3rem 0rem 1.3rem 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.super-headline {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(0deg, 0%, 21%);
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+
+.button {
+  border: 1px solid hsl(26deg, 100%, 72%);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  width: fit-content;
+  padding: 0.7rem 1.6rem 0.7rem 1.6rem;
+  font-size: 1.1rem;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 0.24px;
+  margin: 1.25rem 0px 2rem 0rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  .super-headline {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.65rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    padding: 0.65rem 0rem 0.65rem 1.25rem;
+  }
+}
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #hamburger {
+    width: 24px;
+    height: 13px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: none;
+    background-color: transparent;
+    z-index: 10;
+    cursor: pointer;
+  }
+  #hamburger [class^=line-] {
+    position: absolute;
+    background-color: hsl(26deg, 100%, 72%);
+    height: 1px;
+    transition: transform 0.5s ease;
+    right: 0;
+  }
+  #hamburger:hover {
+    cursor: pointer;
+  }
+  #hamburger .line-1 {
+    top: 0;
+    width: 100%;
+  }
+  #hamburger .line-2 {
+    top: 8px;
+    width: 75%;
+  }
+  #hamburger.open .line-1 {
+    transform: rotate(45deg);
+    transform-origin: 0px 0px;
+  }
+  #hamburger.open .line-2 {
+    transform: rotate(-45deg) translate(-4px, 6px);
+    width: 100%;
+    transform-origin: 0px 5px;
+  }
+  #hamburger.open + ul {
+    transform: translateX(0);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  #hamburger.closed + ul {
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+}
+#mainnav {
+  display: flex;
+  align-items: center;
+}
+#mainnav #hamburger {
+  visibility: hidden;
+}
+#mainnav ul {
+  display: flex;
+  justify-content: space-between;
+}
+#mainnav ul li {
+  padding: 0rem 1rem 0rem 1rem;
+}
+#mainnav ul li a {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: hsl(26deg, 82%, 65%);
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  .topNavContainer #mainnav {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+  }
+  .topNavContainer #mainnav #hamburger {
+    visibility: visible;
+  }
+  .topNavContainer #mainnav ul {
+    display: block;
+    position: fixed;
+    padding: 3rem 1rem 1rem 1rem;
+    width: 100vw;
+    height: 100vh;
+    max-width: 27rem;
+    top: 0;
+    right: 0;
+    background-color: hsl(0deg, 0%, 21%);
+    box-shadow: -5px 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .topNavContainer #mainnav ul li {
+    font-size: 1.37rem;
+    text-align: right;
+    padding: 1rem 0 1rem 0;
+    text-decoration: none;
+  }
+  .topNavContainer #mainnav ul li a {
+    text-decoration: none;
+    color: hsl(0deg, 0%, 100%);
+  }
+}
+header {
+  background-image: url("images/header_2560px_edited2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  height: 80vh;
+}
+header .topNavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+header .topNavContainer a {
+  text-decoration: none;
+}
+header .topNavContainer h1 {
+  font-size: 1.1rem;
+  letter-spacing: 0.24px;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+header .topNavContainer h1 #h1Small {
+  font-weight: 300;
+  text-transform: none;
+}
+header .headerMainContainer {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+header .headerMainContainer h2 {
+  font-size: 3.6rem;
+  color: hsl(26deg, 100%, 72%);
+}
+header .headerMainContainer #headerButton {
+  background-color: black;
+  color: hsl(0deg, 0%, 100%);
+  padding: 0.9rem 1.6rem 0.9rem 1.6rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  header {
+    background-size: cover;
+    background-position-x: 87%;
+    height: 80vh;
+  }
+  header .topNavContainer {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  header .headerMainContainer {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+  }
+  header .headerMainContainer h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  header .headerMainContainer #headerButton {
+    padding: 0.7rem 1.6rem 0.7rem 1.6rem;
+  }
+}
+#workshops {
+  padding: 100px 2rem 100px 2rem;
+}
+#workshops .workshopsTextContainer {
+  margin-bottom: 3rem;
+}
+#workshops .levelContainer {
+  display: grid;
+  grid-template-columns: 1.6fr 0.4fr;
+  gap: 2rem;
+  grid-template-areas: "level3 apply" "level2 register" "level1 register";
+}
+#workshops .levelContainer .numberContainer {
+  grid-area: number;
+  background-color: hsl(0deg, 0%, 100%);
+  display: flex;
+  align-items: flex-start;
+}
+#workshops .levelContainer .numberContainer p {
+  color: hsl(0deg, 0%, 21%);
+  font-weight: 600;
+  font-size: 16rem;
+  line-height: 9.5rem;
+  transform: translateX(20px);
+}
+#workshops .levelContainer .imageContainer {
+  grid-area: _image;
+  justify-self: center;
+  place-self: center;
+}
+#workshops .levelContainer .imageContainer .imgCircle {
+  background-color: hsl(0deg, 0%, 35%);
+  border-radius: 50%;
+  padding: 1.8rem;
+}
+#workshops .levelContainer .imageContainer .imgCircle img {
+  width: 140px;
+}
+#workshops .levelContainer .textContainer {
+  grid-area: _text;
+  padding: 1.5rem;
+}
+#workshops .levelContainer .textContainer h3 {
+  padding: 0.5rem 0rem 0.75rem 0rem;
+}
+#workshops .levelContainer .textContainer p {
+  color: hsl(0deg, 0%, 100%);
+}
+#workshops .levelContainer .textContainer .button {
+  margin-top: 3rem;
+  color: hsl(0deg, 0%, 100%);
+}
+#workshops .levelContainer .quoteContainer {
+  grid-area: quote;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.5rem;
+}
+#workshops .levelContainer .quoteContainer img {
+  width: 120px;
+  position: relative;
+  bottom: -130px;
+  right: -58px;
+}
+#workshops .levelContainer .quoteContainer blockquote {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 300;
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  top: -90px;
+}
+#workshops .levelContainer #level3 {
+  grid-area: level3;
+  display: grid;
+  background-color: hsl(0deg, 0%, 21%);
+  grid-template-columns: 0.4fr 1.8fr 0.9fr 0.9fr;
+  grid-template-areas: "number _text _image quote" "number _text _image quote" "number _text _image quote";
+}
+#workshops .levelContainer #applyWorkshop {
+  grid-area: apply;
+  background-color: hsl(0deg, 0%, 97%);
+  color: hsl(0deg, 0%, 10%);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+#workshops .levelContainer #applyWorkshop p {
+  font-size: 2.5rem;
+  text-align: left;
+  line-height: 3rem;
+}
+#workshops .levelContainer #level2 {
+  grid-area: level2;
+  display: grid;
+  background-color: hsl(0deg, 0%, 21%);
+  grid-template-columns: 0.4fr 0.9fr 0.9fr 1.8fr;
+  grid-template-areas: "number quote _image _text" "number quote _image _text" "number quote _image _text";
+}
+#workshops .levelContainer #level2 .numberContainer {
+  align-items: center;
+}
+#workshops .levelContainer #level1 {
+  grid-area: level1;
+  display: grid;
+  background-color: hsl(0deg, 0%, 21%);
+  grid-template-columns: 0.4fr 0.9fr 1.8fr 0.9fr;
+  gap: 0px 0px;
+  grid-template-areas: "number _image _text quote" "number _image _text quote" "number _image _text quote";
+}
+#workshops .levelContainer #level1 .numberContainer {
+  align-items: flex-end;
+}
+#workshops .levelContainer #level1 .numberContainer p {
+  line-height: 11.4rem;
+}
+#workshops .levelContainer #registerContainer1 {
+  grid-area: register;
+  display: none;
+}
+#workshops .levelContainer #registerContainer2 {
+  grid-area: register;
+  padding: 1rem;
+  background-color: hsl(0deg, 0%, 97%);
+  color: hsl(0deg, 0%, 10%);
+  display: flex;
+  align-items: center;
+}
+#workshops .levelContainer #registerContainer2 p {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #workshops {
+    padding: 2.5rem 0rem 2.5rem 0rem;
+  }
+  #workshops .workshopsTextContainer {
+    margin-bottom: 6rem;
+    padding-left: 2rem;
+  }
+  #workshops .levelContainer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0rem;
+    row-gap: 7rem;
+    grid-template-areas: "level3 apply" "level2 register1" "level1 register2";
+  }
+  #workshops .levelContainer .numberContainer {
+    grid-area: _image;
+    background-color: hsl(0deg, 0%, 84%);
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    left: 60%;
+    top: -73px;
+    align-items: center;
+  }
+  #workshops .levelContainer .numberContainer p {
+    color: hsl(26deg, 62%, 56.7%);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    position: relative;
+    right: 6px;
+  }
+  #workshops .levelContainer .imageContainer {
+    grid-area: _image;
+    justify-self: center;
+    place-self: center;
+    position: relative;
+    bottom: 60px;
+  }
+  #workshops .levelContainer .imageContainer .imgCircle {
+    background-color: hsl(210deg, 3%, 27%);
+    padding: 1.2rem;
+  }
+  #workshops .levelContainer .imageContainer .imgCircle img {
+    width: 75px;
+  }
+  #workshops .levelContainer .textContainer {
+    grid-area: _text;
+    padding: 0rem;
+  }
+  #workshops .levelContainer .textContainer h3 {
+    padding: 0.5rem 0rem 0.75rem 0rem;
+  }
+  #workshops .levelContainer .textContainer p {
+    color: hsl(0deg, 0%, 100%);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #workshops .levelContainer .textContainer .button {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: hsl(0deg, 0%, 100%);
+  }
+  #workshops .levelContainer .quoteContainer {
+    grid-area: quote;
+    justify-self: center;
+    align-items: center;
+    padding: 0rem;
+  }
+  #workshops .levelContainer .quoteContainer img {
+    width: 70px;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+  }
+  #workshops .levelContainer .quoteContainer blockquote {
+    position: relative;
+    top: 0px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  #workshops .levelContainer #applyWorkshop {
+    grid-area: apply;
+    padding: 1rem 0rem 0rem 0.2rem;
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  #workshops .levelContainer #applyWorkshop p {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+  }
+  #workshops .levelContainer .level {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+  #workshops .levelContainer #level3 {
+    grid-area: level3;
+    display: grid;
+    background-color: hsl(0deg, 0%, 21%);
+    grid-template-columns: 1fr;
+    grid-template-areas: "number" "_image" "_text" "quote";
+  }
+  #workshops .levelContainer #level2 {
+    grid-area: level2;
+    display: grid;
+    background-color: hsl(0deg, 0%, 21%);
+    grid-template-columns: 1fr;
+    grid-template-areas: "number" "_image" "_text" "quote";
+  }
+  #workshops .levelContainer #level1 {
+    grid-area: level1;
+    display: grid;
+    background-color: hsl(0deg, 0%, 21%);
+    grid-template-columns: 1fr;
+    grid-template-areas: "number" "_image" "_text" "quote";
+  }
+  #workshops .levelContainer #level1 .numberContainer {
+    align-items: center;
+  }
+  #workshops .levelContainer #level1 .numberContainer p {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  #workshops .levelContainer #registerContainer1 {
+    grid-area: register1;
+    padding: 1rem 0rem 0rem 0.2rem;
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  #workshops .levelContainer #registerContainer1 p {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+  }
+  #workshops .levelContainer #registerContainer2 {
+    grid-area: register2;
+    padding: 1rem 0rem 0rem 0.2rem;
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  #workshops .levelContainer #registerContainer2 p {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+  }
+}
+#about {
+  padding: 100px 2rem 100px 2rem;
+  background-color: hsl(23deg, 100%, 97%);
+  display: flex;
+}
+#about .imgContainer {
+  width: 50%;
+}
+#about .imgContainer img {
+  width: 100%;
+}
+#about .aboutTextContainer {
+  padding: 0px 0px 0px 3rem;
+  width: 35%;
+}
+#about .aboutTextContainer p {
+  margin-top: 1rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #about {
+    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+    flex-direction: column;
+  }
+  #about .imgContainer {
+    width: 100%;
+  }
+  #about .imgContainer img {
+    object-fit: cover;
+  }
+  #about .aboutTextContainer {
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+  }
+  #about .aboutTextContainer p {
+    margin-top: 1rem;
+  }
+}
+#news {
+  padding: 100px 2rem 100px 2rem;
+}
+#news .articleContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 0.4rem;
+  justify-content: space-between;
+}
+#news .articleContainer article {
+  background-color: hsl(0deg, 0%, 97%);
+  width: 455px;
+}
+#news .articleContainer article img {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+#news .articleContainer article .arcticleTextContainer {
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #news {
+    padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+  }
+  #news .articleContainer article {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+  }
+  #news .articleContainer article img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  #news .articleContainer article .arcticleTextContainer {
+    padding: 1rem 1rem 0rem 1rem;
+  }
+}
+footer {
+  background-color: hsl(0deg, 0%, 21%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 2rem 2rem;
+}
+footer h4 {
+  font-size: 2.125rem;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 300;
+  padding: 0.6rem 0rem 0.6rem 0rem;
+}
+footer p {
+  color: hsl(0deg, 0%, 100%);
+}
+footer a {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: hsl(26deg, 82%, 65%);
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  footer {
+    flex-direction: column;
+    padding: 20px 0rem 40px 40px;
+  }
+  footer h4 {
+    font-size: 1.37rem;
+  }
+  footer a {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

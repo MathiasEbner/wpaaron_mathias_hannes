@@ -14,38 +14,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Aaron G. Miller | Choreographer</title>
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <?php wp_head(); ?>
     </head>
     <body>
-        <header>
-            <div class="topNavContainer">
-                <a href="/"
-                    ><h1>
-                        Aaron G. Miller |
-                        <span id="h1Small">Choreographer</span>
-                    </h1></a
-                >
-                <nav id="mainnav">
-                    <button id="hamburger" class="closed">
-                        <div class="line-1"></div>
-                        <div class="line-2"></div>
-                    </button>
-                    <ul>
-                        <li><a href="#workshops">Workshops</a></li>
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#news">News</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="headerMainContainer">
-                <div class="headerText">
-                    <h2>I believe you can dance.</h2>
-                    <a href="#" class="button" id="headerButton"
-                        >Book Workshop</a
-                    >
-                </div>
-            </div>
-        </header>
+    <?php wp_body_open(); ?>
+    <?php get_header(); ?>
 
         <main>
             <section id="workshops">
@@ -61,10 +35,9 @@
                         <div class="numberContainer"><p>3</p></div>
                         <div class="imageContainer">
                             <div class="imgCircle">
-                                <img
-                                    src="./images/level-3.svg"
-                                    alt="Icon showing dancer
-                    stretching her leg up to her nose."
+                                <img 
+                                    src="<?php print(get_template_directory_uri()); ?>/images/level-3.svg"
+                                    alt="Icon showing dance stretching her leg up to her nose."
                                 />
                             </div>
                         </div>
@@ -82,7 +55,7 @@
                             </div>
                         </div>
                         <div class="quoteContainer">
-                            <img src="./images/quote.svg" alt="quote sign" />
+                            <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
                             <blockquote>Respect your talent!</blockquote>
                         </div>
                     </div>
@@ -94,7 +67,7 @@
                         <div class="imageContainer">
                             <div class="imgCircle">
                                 <img
-                                    src="./images/level-2.svg"
+                                    src="<?php print(get_template_directory_uri()); ?>/images/level-2.svg"
                                     alt="Icon showing dancer
                     stretching her leg up to her nose."
                                 />
@@ -113,7 +86,7 @@
                             </div>
                         </div>
                         <div class="quoteContainer">
-                            <img src="./images/quote.svg" alt="quote sign" />
+                            <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
                             <blockquote>
                                 Thank yourself for leveling up now!
                             </blockquote>
@@ -127,7 +100,7 @@
                         <div class="imageContainer">
                             <div class="imgCircle">
                                 <img
-                                    src="./images/level-1.svg"
+                                    src="<?php print(get_template_directory_uri()); ?>/images/level-1.svg"
                                     alt="Icon showing dancer
                     stretching her leg up to her nose."
                                 />
@@ -146,7 +119,7 @@
                             </div>
                         </div>
                         <div class="quoteContainer">
-                            <img src="./images/quote.svg" alt="quote sign" />
+                            <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
                             <blockquote>Fall in love with dancing!</blockquote>
                         </div>
                     </div>
@@ -158,7 +131,7 @@
             <section id="about">
                 <div class="imgContainer">
                     <img
-                        src="./images/portrait_1280px.jpg"
+                        src="<?php print(get_template_directory_uri()); ?>/images/portrait_1280px.jpg"
                         alt="Portrait of Aaron"
                     />
                 </div>
@@ -199,7 +172,7 @@
                     <article>
                         <h3>Sydney Dance Festival 2022</h3>
                         <img
-                            src="./images/dance1_640px.jpg"
+                            src="<?php print(get_template_directory_uri()); ?>/images/dance1_640px.jpg"
                             alt="Aaron performing at the Sydney dance festival 2022"
                         />
                         <div class="arcticleTextContainer">
@@ -218,7 +191,7 @@
                     <article>
                         <h3>"Dance Pool" 2023 sold out!</h3>
                         <img
-                            src="./images/group_640px.jpg"
+                            src="<?php print(get_template_directory_uri()); ?>/images/group_640px.jpg"
                             alt="Group picture of 'Dance Pool'"
                         />
                         <div class="arcticleTextContainer">
@@ -237,7 +210,7 @@
                     <article>
                         <h3>New London Workshop Oct. 2025</h3>
                         <img
-                            src="./images/dance2_640px.jpg"
+                            src="<?php print(get_template_directory_uri()); ?>/images/dance2_640px.jpg"
                             alt="Aaron at a workshop"
                         />
                         <div class="arcticleTextContainer">
@@ -257,27 +230,13 @@
             </section>
         </main>
 
-        <footer>
-            <div class="footerContainer">
-                <h4>Thank you for your interest in Art!</h4>
-                <p>© 2004 – 2023 Aaron G. Miller</p>
-            </div>
-            <a href="#">Imprint & Privacy</a>
-            <!-- * [https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49020288773).jpg](https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49020288773).jpg)
-            * [https://commons.wikimedia.org/wiki/File:Cheng_Tsung_Lung.jpg](https://commons.wikimedia.org/wiki/File:Cheng_Tsung_Lung.jpg)
-            * [https://commons.wikimedia.org/wiki/File:Meredith_Monk_-_On_Behalf_of_Nature_-_Brooklyn_Academy_of_Music_(15822608589).jpg](https://commons.wikimedia.org/wiki/File:Meredith_Monk_-_On_Behalf_of_Nature_-_Brooklyn_Academy_of_Music_(15822608589).jpg)
-            * [https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49021032627).jpg](https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49021032627).jpg)
-            * [https://commons.wikimedia.org/wiki/File:Meredith_Monk_-_On_Behalf_of_Nature_-_Brooklyn_Academy_of_Music_(15989693711).jpg](https://commons.wikimedia.org/wiki/File:Meredith_Monk_-_On_Behalf_of_Nature_-_Brooklyn_Academy_of_Music_(15989693711).jpg)
-            Yoga Icons by Vitaly Gorbachev from
-            * https://www.flaticon.com/free-icon/yoga_2043795
-            * https://www.flaticon.com/free-icon/yoga_2043787
-            * https://www.flaticon.com/free-icon/yoga_2043799 -->
-        </footer>
-        <script src="./main.js"></script>
+         <script src="main.js"></script> 
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
                 MainNav.init();
             });
         </script>
+        <?php get_footer(); ?>
+        <?php wp_footer(); ?>
     </body>
 </html>
