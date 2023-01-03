@@ -1,7 +1,7 @@
 <footer>
     <div class="footerContainer">
         <h4>Thank you for your interest in Art!</h4>
-        <p>© 2004 – 2023 Aaron G. Miller</p>
+        <p>© 2004 – <?php echo date("Y"); ?> Aaron G. Miller</p>
     </div>
     <a href="#">Imprint & Privacy</a>
     <!-- * [https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49020288773).jpg](https://commons.wikimedia.org/wiki/File:DANCE_-_Grupo_de_Rua,_%22Inoah,%22_at_Brooklyn_Academy_of_Music_(49020288773).jpg)

@@ -2,32 +2,27 @@
     padding: 100px 2rem 100px 2rem;
     background-color: $orange-white;
     display: flex;
-
-    .imgContainer {
+    img {
         width: 50%;
-        img {
-            width: 100%;
-        }
+        object-fit: cover;
     }
 
     .aboutTextContainer {
-        padding: 0px 0px 0px 3rem;
+        padding: 2rem 2rem 2rem 2rem;
         width: 35%;
-        p {
-            margin-top: 1rem;
+        .aboutParagraph {
+            margin-bottom: 1rem;
         }
     }
 }
 
-@include breakpoint(0, $mobile) {
+@include breakpoint(0, 1024) {
     #about {
         padding: 2.5rem 0.5rem 1.5rem 0.5rem;
         flex-direction: column;
-        .imgContainer {
+
+        img {
             width: 100%;
-            img {
-                object-fit: cover;
-            }
         }
 
         .aboutTextContainer {

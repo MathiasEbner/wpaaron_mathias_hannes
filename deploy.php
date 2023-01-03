@@ -5,15 +5,14 @@ require 'recipe/wordpress.php';
 
 // Config
 
-set('repository', 'git@github.com:MathiasEbner/wpaaron_mathias_hannes.git');
+set('repository', 'https://github.com/MathiasEbner/wpaaron_mathias_hannes');
 
-add('shared_files', []);
-add('shared_dirs', []);
-add('writable_dirs', []);
+set('shared_files', ['public/wp-config.php']);
+set('shared_dirs', ['public/wp-content/uploads']);
+
 
 // Hosts
-
-host('vm-ultramarine.multimediatechnology.at/')
+host('vm-ultramarine.multimediatechnology.at')
     ->set('remote_user', 'admin')
     ->set('port', 5412)
     ->set('deploy_path', '~/aaron-wp');

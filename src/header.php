@@ -8,8 +8,8 @@
         >
         <nav id="mainnav">
             <button id="hamburger" class="closed">
-                <div class="line-1"></div>
-                <div class="line-2"></div>
+                <span class="line-1"></span>
+                <span class="line-2"></span>
             </button>
             <ul>
                 <li><a href="#workshops">Workshops</a></li>
@@ -20,7 +20,17 @@
     </div>
     <div class="headerMainContainer">
         <div class="headerText">
-            <h2>I believe you can dance.</h2>
+            <?php
+                $header_headline_query = new WP_Query( array( 'p' => 49 ));
+                if( $header_headline_query->have_posts() ) {
+                    while( $header_headline_query->have_posts() ) {
+                        $header_headline_query->the_post(); // iterate the post here
+            ?>
+                <h2><?php the_title(); ?></h2>
+            <?php
+                }
+            }
+            ?>
             <a href="#" class="button" id="headerButton"
                 >Book Workshop</a
             >

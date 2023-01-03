@@ -1,4 +1,4 @@
-@include breakpoint(0, $mobile) {
+@include breakpoint(0, 680) {
     .topNavContainer {
         #mainnav {
             position: fixed;
@@ -16,7 +16,7 @@
                 padding: 3rem 1rem 1rem 1rem;
                 width: 100vw;
                 height: 100vh;
-                max-width: 27rem;
+                max-width: 20rem;
                 top: 0;
                 right: 0;
                 background-color: $gray-dark;
@@ -27,6 +27,8 @@
                     padding: 1rem 0 1rem 0;
                     text-decoration: none;
                     a {
+                        text-transform: unset;
+                        font-weight: 300;
                         text-decoration: none;
                         color: $white;
                     }

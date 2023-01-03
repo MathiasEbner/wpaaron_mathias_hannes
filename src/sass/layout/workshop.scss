@@ -1,12 +1,12 @@
 #workshops {
     padding: 100px 2rem 100px 2rem;
+
     .workshopsTextContainer {
         margin-bottom: 3rem;
     }
     .levelContainer {
         display: grid;
         grid-template-columns: 1.6fr 0.4fr;
-        //grid-template-rows: 1fr 1fr 1fr;
         gap: 2rem;
         grid-template-areas:
             "level3 apply"
@@ -23,7 +23,7 @@
                 font-weight: 600;
                 font-size: 16rem;
                 line-height: 9.5rem;
-                transform: translateX(20px);
+                transform: translateX(35px);
             }
         }
         .imageContainer {
@@ -33,9 +33,14 @@
             .imgCircle {
                 background-color: $gray-middle;
                 border-radius: 50%;
+                // width: 75%;
                 padding: 1.8rem;
+                display: flex;
+                justify-content: center;
                 img {
-                    width: 140px;
+                    width: 100%;
+                    min-width: 70px;
+                    // width: 50%;
                 }
             }
         }
@@ -49,31 +54,26 @@
                 color: $white;
             }
             .button {
-                margin-top: 3rem;
+                margin-top: 2rem;
                 color: $white;
+                margin-bottom: 0.5rem;
             }
         }
         .quoteContainer {
             grid-area: quote;
-            justify-self: center;
             display: flex;
-            align-items: center;
-            flex-direction: column;
-
-            padding: 2.5rem;
+            justify-content: space-between;
+            flex-direction: column-reverse;
             img {
-                width: 120px;
-                position: relative;
-                bottom: -130px;
-                right: -58px;
+                width: 140px;
+                align-self: flex-end;
             }
             blockquote {
                 font-size: 1.8rem;
                 line-height: 2.2rem;
                 font-weight: 300;
                 color: $white;
-                position: relative;
-                top: -90px;
+                padding: 2rem;
             }
         }
 
@@ -87,7 +87,7 @@
                 "number _text _image quote"
                 "number _text _image quote";
         }
-        #applyWorkshop {
+        #registerContainer3 {
             grid-area: apply;
             background-color: $white-dark;
             color: $gray-apply;
@@ -112,6 +112,9 @@
             .numberContainer {
                 align-items: center;
             }
+            .quoteContainer {
+                flex-direction: column;
+            }
         }
         #level1 {
             grid-area: level1;
@@ -129,6 +132,9 @@
                     line-height: 11.4rem;
                 }
             }
+            .quoteContainer {
+                flex-direction: column;
+            }
         }
         #registerContainer1 {
             grid-area: register;
@@ -136,9 +142,9 @@
         }
         #registerContainer2 {
             grid-area: register;
-            padding: 1rem;
             background-color: $white-dark;
             color: $gray-apply;
+            padding: 1rem;
             display: flex;
             align-items: center;
             p {
@@ -149,7 +155,7 @@
     }
 }
 
-@include breakpoint(0, $mobile) {
+@include breakpoint(0, 1024) {
     #workshops {
         padding: 2.5rem 0rem 2.5rem 0rem;
         .workshopsTextContainer {
@@ -175,8 +181,9 @@
                 text-align: center;
                 border-radius: 50%;
                 position: relative;
-                left: 60%;
-                top: -73px;
+
+                left: calc(50% + 33px);
+                top: -70px;
                 align-items: center;
                 p {
                     color: $orange-dark;
@@ -184,7 +191,8 @@
                     font-size: 1.75rem;
                     line-height: 2rem;
                     position: relative;
-                    right: 6px;
+                    right: 7px;
+                    transform: translateX(20px);
                 }
             }
             .imageContainer {
@@ -223,22 +231,17 @@
                 justify-self: center;
                 align-items: center;
 
-                padding: 0rem;
                 img {
                     width: 70px;
-                    position: relative;
-                    bottom: 0px;
-                    right: 0px;
+                    align-self: center;
                 }
                 blockquote {
-                    position: relative;
-                    top: 0px;
-                    margin-top: 5px;
                     text-align: center;
                     font-size: 1.4rem;
+                    padding: 0rem;
                 }
             }
-            #applyWorkshop {
+            #registerContainer3 {
                 grid-area: apply;
                 padding: 1rem 0rem 0rem 0.2rem;
                 display: block;
@@ -268,6 +271,9 @@
                     "_image"
                     "_text"
                     "quote";
+                .quoteContainer {
+                    flex-direction: column;
+                }
             }
             #level2 {
                 grid-area: level2;

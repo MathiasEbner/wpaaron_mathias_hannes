@@ -13,6 +13,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Want to learn how to dance? Book a workshop with Aaron!">
+        <meta name="keywords" content="learning, choreographer, dance, workshops, aaron g miller, level, aaron ">
         <title>Aaron G. Miller | Choreographer</title>
         <link rel="stylesheet" href="style.css" />
         <?php wp_head(); ?>
@@ -22,215 +24,138 @@
     <?php get_header(); ?>
 
         <main>
+        <?php if (is_front_page()) { ?>
             <section id="workshops">
                 <div class="workshopsTextContainer">
-                    <p class="super-headline">
-                        Find your entrance level & book a workshop with Aaron
-                    </p>
-                    <h2>If you never start, you will never know.</h2>
+                <?php
+                    $workshop_headline_query = new WP_Query( array( 'p' => 41 ));
+                    if( $workshop_headline_query->have_posts() ) {
+                        while( $workshop_headline_query->have_posts() ) {
+                            $workshop_headline_query->the_post(); // iterate the post here
+                ?>
+                <p class="super-headline"><?= get_post_custom_values( 'super-headline' )[0]; ?></p>
+                <h2><?php the_title(); ?></h2>
+                <?php
+                    }
+                }
+                ?>
                 </div>
 
                 <div class="levelContainer">
-                    <div id="level3" class="level">
-                        <div class="numberContainer"><p>3</p></div>
+                    <?php
+                        $workshops_query = new WP_Query( array( 'category_name' => 'level', 'order' => 'ASC' ));
+                        if( $workshops_query->have_posts() ) {
+                            while( $workshops_query->have_posts() ) {
+                                $workshops_query->the_post(); // iterate the post here
+                    ?>
+                    <div id="level<?= get_post_custom_values( 'level' )[0]; ?>" class="level">
+                        <div class="numberContainer">
+                            <p>
+                            <?= get_post_custom_values( 'level' )[0]; ?>
+                            </p>
+                        </div>
                         <div class="imageContainer">
                             <div class="imgCircle">
-                                <img 
-                                    src="<?php print(get_template_directory_uri()); ?>/images/level-3.svg"
-                                    alt="Icon showing dance stretching her leg up to her nose."
-                                />
-                            </div>
-                        </div>
-
-                        <div class="textContainer">
-                            <div class="textMain">
-                                <h3>As pro as you can get</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur
-                                    sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.
-                                </p>
-                                <a href="#" class="button">Book Workshop</a>
-                            </div>
-                        </div>
-                        <div class="quoteContainer">
-                            <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
-                            <blockquote>Respect your talent!</blockquote>
-                        </div>
-                    </div>
-                    <div id="applyWorkshop" class="applyContainer">
-                        <p>Apply for an audition now!</p>
-                    </div>
-                    <div id="level2" class="level">
-                        <div class="numberContainer"><p>2</p></div>
-                        <div class="imageContainer">
-                            <div class="imgCircle">
-                                <img
-                                    src="<?php print(get_template_directory_uri()); ?>/images/level-2.svg"
-                                    alt="Icon showing dancer
-                    stretching her leg up to her nose."
-                                />
+                                <?php if ( has_post_thumbnail() ) {
+                                    the_post_thumbnail();
+                                } ?>
                             </div>
                         </div>
                         <div class="textContainer">
                             <div class="textMain">
-                                <h3>As pro as you can get</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur
-                                    sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.
-                                </p>
-                                <a href="#" class="button">Book Workshop</a>
+                                <h3><?php the_title(); ?></h3>
+                                <?php the_content(); ?> 
+                                <a href=<?= the_permalink(); ?> class="button">Book Workshop</a>
                             </div>
                         </div>
                         <div class="quoteContainer">
                             <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
-                            <blockquote>
-                                Thank yourself for leveling up now!
-                            </blockquote>
+                            <blockquote><?= get_post_custom_values( 'slogan' )[0]; ?></blockquote>
                         </div>
                     </div>
-                    <div id="registerContainer2" class="applyContainer">
-                        <p>Registration now open for everybody!</p>
+                    <div id="registerContainer<?= get_post_custom_values( 'level' )[0]; ?>" class="applyContainer">
+                        <p><?= get_post_custom_values( 'apply' )[0]; ?></p>
                     </div>
-                    <div id="level1" class="level">
-                        <div class="numberContainer"><p>1</p></div>
-                        <div class="imageContainer">
-                            <div class="imgCircle">
-                                <img
-                                    src="<?php print(get_template_directory_uri()); ?>/images/level-1.svg"
-                                    alt="Icon showing dancer
-                    stretching her leg up to her nose."
-                                />
-                            </div>
-                        </div>
-                        <div class="textContainer">
-                            <div class="textMain">
-                                <h3>As pro as you can get</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur
-                                    sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.
-                                </p>
-                                <a href="#" class="button">Book Workshop</a>
-                            </div>
-                        </div>
-                        <div class="quoteContainer">
-                            <img src="<?php print(get_template_directory_uri()); ?>/images/quote.svg" alt="quote sign" />
-                            <blockquote>Fall in love with dancing!</blockquote>
-                        </div>
-                    </div>
-                    <div id="registerContainer1" class="applyContainer">
-                        <p>Registration now open for everybody!</p>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
             </section>
-            <section id="about">
-                <div class="imgContainer">
-                    <img
-                        src="<?php print(get_template_directory_uri()); ?>/images/portrait_1280px.jpg"
-                        alt="Portrait of Aaron"
-                    />
-                </div>
+            <section id="about">  
+                <?php
+                    $aboutme_query = new WP_Query( array( 'p' => 6 ));
+                    if( $aboutme_query->have_posts() ) {
 
+                        while( $aboutme_query->have_posts() ) {
+                            $aboutme_query->the_post(); 
+                ?>             
+                <img
+                    src="<?php print(get_template_directory_uri()); ?>/images/portrait_1280px.jpg"
+                    alt="Portrait of Aaron"
+                />
                 <div class="aboutTextContainer">
                     <div>
-                        <p class="super-headline">Why I teach</p>
-                        <h2>Hi, I'm Aaron!</h2>
+                        <p class="super-headline">
+                            <?= get_post_custom_values( 'super-headline' )[0]; ?>
+                        </p>
+                        <h2><?php the_title(); ?></h2>
                     </div>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Placeat itaque incidunt, nihil, recusandae autem aut
-                        perferendis reiciendis a neque veniam quibusdam animi ex
-                        tempora reprehenderit, aspernatur asperiores consequatur
-                        consectetur ipsum!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Placeat itaque incidunt, nihil, recusandae autem aut
-                        perferendis reiciendis a neque veniam quibusdam animi ex
-                        tempora reprehenderit, aspernatur asperiores consequatur
-                        consectetur ipsum! Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Placeat itaque incidunt,
-                        nihil, recusandae autem aut perferendis reiciendis a
-                        neque veniam quibusdam animi ex tempora reprehenderit,
-                        aspernatur asperiores consequatur consectetur ipsum!
-                    </p>
-
+                    <?php the_content(); ?>
                     <a href="#" class="button">Learn more</a>
                 </div>
+                <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </section>
             <section id="news">
-                <p class="super-headline">Making waves since 2004</p>
-                <h2>In the News</h2>
-
+                <?php
+                    $news_headline_query = new WP_Query( array( 'p' => 39 ));
+                    if( $news_headline_query->have_posts() ) {
+                        while( $news_headline_query->have_posts() ) {
+                            $news_headline_query->the_post(); // iterate the post here
+                ?>
+                <p class="super-headline"><?= get_post_custom_values( 'super-headline' )[0]; ?></p>
+                <h2><?php the_title(); ?></h2>
+                <?php
+                    }
+                }
+                ?>
                 <div class="articleContainer">
+                    <?php
+                        $news_query = new WP_Query(array('category_name' => 'news', 'posts_per_page' => '3' ));
+                        if( $news_query->have_posts() ) {
+                            while( $news_query->have_posts() ) {
+                                $news_query->the_post(); // iterate the post here
+                    ?>
                     <article>
-                        <h3>Sydney Dance Festival 2022</h3>
-                        <img
-                            src="<?php print(get_template_directory_uri()); ?>/images/dance1_640px.jpg"
-                            alt="Aaron performing at the Sydney dance festival 2022"
-                        />
+                        <h3><?php the_title(); ?></h3>
+                        <?php the_post_thumbnail(); ?>
                         <div class="arcticleTextContainer">
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam
-                                erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <a href="#" class="button">Read more</a>
+                            <?php the_content(); ?>
+                            <a href=<?php the_permalink(); ?> class="button">Read more</a>                   
                         </div>
                     </article>
-                    <article>
-                        <h3>"Dance Pool" 2023 sold out!</h3>
-                        <img
-                            src="<?php print(get_template_directory_uri()); ?>/images/group_640px.jpg"
-                            alt="Group picture of 'Dance Pool'"
-                        />
-                        <div class="arcticleTextContainer">
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam
-                                erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </article>
-                    <article>
-                        <h3>New London Workshop Oct. 2025</h3>
-                        <img
-                            src="<?php print(get_template_directory_uri()); ?>/images/dance2_640px.jpg"
-                            alt="Aaron at a workshop"
-                        />
-                        <div class="arcticleTextContainer">
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam
-                                erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </article>
+                    <?php
+                            }
+                        }
+                        ?>
                 </div>
             </section>
+            <?php } else {  ?>
+                <?php if(have_posts()) {
+                    while(have_posts()) {
+                        the_post();
+                        the_title();
+                        the_content();
+                    }
+                } ?>
+                <?php } ?>
         </main>
 
-         <script src="main.js"></script> 
+        <script src='<?php echo get_template_directory_uri() ?>/main.js' type="module"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function (event) {
                 MainNav.init();
