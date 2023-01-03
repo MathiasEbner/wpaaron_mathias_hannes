@@ -84,7 +84,7 @@
             </section>
             <section id="about">  
                 <?php
-                    $aboutme_query = new WP_Query( array( 'p' => 6 ));
+                    $aboutme_query = new WP_Query( array( 'p' => 8 ));
                     if( $aboutme_query->have_posts() ) {
 
                         while( $aboutme_query->have_posts() ) {
@@ -94,6 +94,7 @@
                     src="<?php print(get_template_directory_uri()); ?>/images/portrait_1280px.jpg"
                     alt="Portrait of Aaron"
                 />
+                <!-- /* <?php /* the_post_thumbnail('medium_large'); */  ?>  Does not work properly-->
                 <div class="aboutTextContainer">
                     <div>
                         <p class="super-headline">

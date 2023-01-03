@@ -19,5 +19,4 @@ host('vm-ultramarine.multimediatechnology.at')
 
 
 // Hooks
-
 after('deploy:failed', 'deploy:unlock');
