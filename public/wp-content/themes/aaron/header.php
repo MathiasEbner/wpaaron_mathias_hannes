@@ -21,7 +21,7 @@
     <div class="headerMainContainer">
         <div class="headerText">
             <?php
-                $header_headline_query = new WP_Query( array( 'p' => 49 ));
+                $header_headline_query = new WP_Query( array( 'p' => 36 ));
                 if( $header_headline_query->have_posts() ) {
                     while( $header_headline_query->have_posts() ) {
                         $header_headline_query->the_post(); // iterate the post here

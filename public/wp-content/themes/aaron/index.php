@@ -28,7 +28,7 @@
             <section id="workshops">
                 <div class="workshopsTextContainer">
                 <?php
-                    $workshop_headline_query = new WP_Query( array( 'p' => 41 ));
+                    $workshop_headline_query = new WP_Query( array( 'p' => 27 ));
                     if( $workshop_headline_query->have_posts() ) {
                         while( $workshop_headline_query->have_posts() ) {
                             $workshop_headline_query->the_post(); // iterate the post here
@@ -113,7 +113,7 @@
             </section>
             <section id="news">
                 <?php
-                    $news_headline_query = new WP_Query( array( 'p' => 39 ));
+                    $news_headline_query = new WP_Query( array( 'p' => 25 ));
                     if( $news_headline_query->have_posts() ) {
                         while( $news_headline_query->have_posts() ) {
                             $news_headline_query->the_post(); // iterate the post here
